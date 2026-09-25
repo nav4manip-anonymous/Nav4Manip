@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="description" content="Dexterous mobile manipulation with bidirectionally coupled co-evolution, the Nav-N-Manip benchmark, and Nav4Manip-Pairs.">
+  
+  <meta name="keywords" content="dexterous mobile manipulation, navigation, Nav-N-Manip, Nav4Manip-Pairs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title> Nav4Manip: From Navigation to Dexterous Mobile Manipulation through Co-Evolution </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/demo-carousels.css">
+  
+  <link rel="icon" href="./static/images/placeholders/logo.svg">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script defer src="./static/js/site-config.js"></script>
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="margin-left:0; margin-right:0;">
+        <div class="column has-text-centered">
+          
+          <h1 class="title is-1 publication-title" data-paper-title> 
+            <img src="./static/images/placeholders/logo.svg" alt="Logo placeholder" style="width: 10%; height: auto; vertical-align:baseline; margin-right: 10px;">
+            <span data-title-text>Nav4Manip: From Navigation to Dexterous Mobile Manipulation through Co-Evolution</span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            
+            <span class="author-block" data-authors>Anonymous Submission</span>
+            
+            
+          </div>
+            
+            
+          </div>
+        </div>
+      <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              
+              
+              
+              
+              <span class="link-block">
+                <a href="#"
+                  class="external-link button is-normal is-rounded is-dark" data-code-link aria-disabled="true">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (link to be provided)</span>
+                  </a>
+              </span>
+              
+              
+            </div>
+      </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop"><div class="hero-body">
+    <img src="./static/images/placeholders/teaser.svg" alt="Overview figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">A bidirectionally coupled co-evolution system for long-horizon dexterous mobile manipulation.</h2>
+  </div></div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+    <br><h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified"><p>Dexterous mobile manipulation is essential for robots to perform useful tasks in complex, unstructured environments. However, existing systems face two challenges. First, navigation remains too coarse for downstream manipulation, which often requires a precise base position and approach orientation rather than merely reaching a meter-scale goal region. Second, navigation and manipulation are commonly trained in isolation, lacking an interactive feedback loop that enables the two capabilities to co-evolve. These limitations prevent current systems from reliably solving practical, long-horizon dexterous mobile-manipulation tasks. To address them, we introduce <span data-method-name>Nav4Manip</span>, a bidirectionally coupled co-evolution system for long-horizon dexterous mobile manipulation. Our framework trains its navigation model, <span data-navigation-name>Nav4Manip-N</span>, in three stages: multi-task co-tuning learns navigation behavior and manipulation-aware affordance prediction; rejection sampling fine-tuning (RFT) rejects low-quality policy-generated paths and fine-tunes the model on retained manipulation-successful trajectories; and reinforcement learning from AI feedback (RLAIF) uses execution-grounded counterfactual preferences to further improve navigation decisions. To support this framework, we establish the <span class="dnerf">Nav-N-Manip</span> benchmark and construct Nav4Manip-Pairs from benchmark rollouts, providing large-scale paired navigation–manipulation trajectories and rollout-derived affordance supervision. Extensive experiments on established VLN benchmarks and <span class="dnerf">Nav-N-Manip</span> demonstrate state-of-the-art performance, while real-world evaluations show that <span data-method-name>Nav4Manip</span> completes diverse dexterous mobile-manipulation tasks.</p><br></div>
+  </div></div></div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+    <br><h2 class="title is-3">Method</h2>
+    <img src="./static/images/placeholders/method.svg" alt="Method figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <div class="content has-text-justified"><p>Our framework trains its navigation model in three stages: <b>multi-task co-tuning</b> learns navigation behavior and manipulation-aware affordance prediction; <b>rejection sampling fine-tuning (RFT)</b> rejects low-quality policy-generated paths and fine-tunes the model on retained manipulation-successful trajectories; and <b>reinforcement learning from AI feedback (RLAIF)</b> uses execution-grounded counterfactual preferences to further improve navigation decisions.</p></div><br>
+  </div></div></div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+    <br><h2 class="title is-3">Nav-N-Manip and Nav4Manip-Pairs</h2>
+    <img src="./static/images/placeholders/data.svg" alt="Benchmark and dataset figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <div class="content has-text-justified"><p>We establish the Nav-N-Manip benchmark and construct Nav4Manip-Pairs from benchmark rollouts, providing large-scale paired navigation–manipulation trajectories and rollout-derived affordance supervision.</p></div><br>
+  </div></div></div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">Real-World Evaluation</h2><p>Real-world evaluations show that <span data-method-name>Nav4Manip</span> completes diverse dexterous mobile-manipulation tasks.</p><br>
+    </div></div>
+    <div class="columns is-multiline is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-half">
+      <div data-media-slot="realworld-1" aria-label="Real-world demonstration: video placeholder">
+      <img src="./static/images/placeholders/video-wide.svg" alt="Real-world demonstration — video to be selected" style="width:100%; height:auto; display:block;">
+    </div>
+      <p>Real-world demonstration</p><br>
+    </div>
+<div class="column is-half">
+      <div data-media-slot="realworld-2" aria-label="Real-world demonstration: video placeholder">
+      <img src="./static/images/placeholders/video-wide.svg" alt="Real-world demonstration — video to be selected" style="width:100%; height:auto; display:block;">
+    </div>
+      <p>Real-world demonstration</p><br>
+    </div></div>
+  </div>
+</section>
+
+<section class="section demo-section">
+  <div class="container demo-container--compact">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">Mobile Manipulation Rollouts</h2><p>Navigation and dexterous manipulation in simulation (4× speed).</p><br>
+    </div></div>
+    <div id="mobile-manipulation-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="rollouts" data-slides-to-show="4" role="region" aria-roledescription="carousel" aria-label="Mobile Manipulation Rollouts" tabindex="0">
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-1" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-2" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 2">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 2" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-3" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 3">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 3" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-4" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 4">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 4" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-5" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 5">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 5" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="mobile-manipulation-6" style="--media-aspect: 640 / 480;" aria-label="Mobile Manipulation Rollout 6">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Mobile Manipulation Rollout 6" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light demo-section">
+  <div class="container demo-container--wide">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">Navigation Rollouts</h2><p>First-person navigation rollouts, including instruction following and object-goal navigation.</p><br>
+    </div></div>
+    <div id="navigation-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="rollouts" data-slides-to-show="6" role="region" aria-roledescription="carousel" aria-label="Navigation Rollouts" tabindex="0">
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-instruction-1" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 1">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 1" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-instruction-2" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 2">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 2" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-object-1" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 3">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 3" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-object-2" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 4">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 4" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-5" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 5">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 5" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-6" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 6">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 6" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-7" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 7">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 7" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-8" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 8">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 8" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-9" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 9">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 9" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="navigation-10" style="--media-aspect: 640 / 632;" aria-label="Navigation Rollout 10">
+              <img src="./static/images/placeholders/video-navigation.svg" alt="Navigation Rollout 10" width="640" height="632" draggable="false">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section demo-section">
+  <div class="container demo-container--wide">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">Grasping Rollouts</h2><p>First-person grasping rollouts in simulation.</p><br>
+    </div></div>
+    <div id="grasping-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="rollouts" data-slides-to-show="6" role="region" aria-roledescription="carousel" aria-label="Grasping Rollouts" tabindex="0">
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-1" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-2" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 2">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 2" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-3" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 3">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 3" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-4" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 4">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 4" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-5" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 5">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 5" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-6" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 6">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 6" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-7" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 7">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 7" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-8" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 8">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 8" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-9" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 9">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 9" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+      <div class="carousel-panel">
+          <div class="item">
+            <div class="demo-media" data-media-slot="grasping-10" style="--media-aspect: 640 / 480;" aria-label="Grasping Rollout 10">
+              <img src="./static/images/placeholders/video-standard.svg" alt="Grasping Rollout 10" width="640" height="480" draggable="false">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">R2R Navigation Comparisons</h2><p>Navigation rollouts on R2R.</p><br>
+    </div></div>
+    <div id="comparison-r2r-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="comparison" data-slides-to-show="1" role="region" aria-roledescription="carousel" aria-label="R2R navigation comparisons" tabindex="0">
+      <div class="carousel-panel" data-comparison-group="1" role="group" aria-label="R2R comparison group 1 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Walk until you reach the brown dresser with the vase on top of it, turn right, take a left  and walk through the first doorway, stop immediatly after the doorway.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-model" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 1, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 1, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-internvla" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 1, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 1, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-uninavid" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 1, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 1, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="2" role="group" aria-label="R2R comparison group 2 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Exit the laundry room and turn left. Walk towards the curio cabinet and turn left again. Enter the bedroom and walk past the dresser. Exit through the door to the left and wait near the sink.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-2-model" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 2, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 2, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-2-internvla" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 2, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 2, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-2-uninavid" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 2, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 2, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="3" role="group" aria-label="R2R comparison group 3 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Go straight until you get to the frame on the wall of the teddy bear with the balloons saying "welcome" then turn right and go straight until you get to the room and wait in the entrance.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-3-model" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 3, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 3, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-3-internvla" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 3, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 3, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-r2r-3-uninavid" style="--media-aspect: 640 / 480;" aria-label="R2R comparison group 3, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="R2R comparison group 3, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">RxR Navigation Comparisons</h2><p>Navigation rollouts on RxR.</p><br>
+    </div></div>
+    <div id="comparison-rxr-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="comparison" data-slides-to-show="1" role="region" aria-roledescription="carousel" aria-label="RxR navigation comparisons" tabindex="0">
+      <div class="carousel-panel" data-comparison-group="1" role="group" aria-label="RxR comparison group 1 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> We're facing some armchairs and a couch. Let's turn to our right and go straight. And go down the stairs. On this floor we should be able to see a white open door. Go through the open door. We are in a bathroom and we can stop here.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-model" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 1, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 1, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-internvla" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 1, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 1, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-uninavid" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 1, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 1, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="2" role="group" aria-label="RxR comparison group 2 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> We're going to start by looking at some paintings and a white sofa. We're going to turn out heads slightly to the right, and see a clock. Let's walk towards the clock. As we're now standing in front of the clock, let's turn our heads slightly to the right, and walk towards the small pathway between the kitchen and the living room. Now, as we're standing between the living room and the kitchen area, we're going to walk to the large cabinets that are in the corner of the room below some paintings. As we're standing in front of it, we're going to turn our heads to the right, all the way, and we're going to walk towards the small chair with some cushions that's in front of us. We should now be standing in the living room in front of the mat. We're going to turn to the right and walk towards the middle of the entire room: the kitchen, the living room, and the dining area. This will be our destination.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-2-model" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 2, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 2, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-2-internvla" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 2, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 2, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-2-uninavid" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 2, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 2, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="3" role="group" aria-label="RxR comparison group 3 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> You are facing a fireplace.  You are going to turn around and you are going to hop over the left side of the couch going towards the picture on the wall.  Once there you are going to take a step towards the corner of the island on your right.  And then you are going to turn left and go thru the walkway.  You are going to move forward down this hallway.  You are going to pass a window on your right.  And then you are going to turn into the last room on your left, you will see a washer and dryer.  You are going to step onto the rug in there and then you are done.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-3-model" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 3, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 3, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-3-internvla" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 3, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 3, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-rxr-3-uninavid" style="--media-aspect: 640 / 480;" aria-label="RxR comparison group 3, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="RxR comparison group 3, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+      <br><h2 class="title is-3">VLNVerse Navigation Comparisons</h2><p>Navigation rollouts on VLNVerse.</p><br>
+    </div></div>
+    <div id="comparison-vlnverse-carousel" class="carousel results-carousel demo-carousel" data-demo-carousel="comparison" data-slides-to-show="1" role="region" aria-roledescription="carousel" aria-label="VLNVerse navigation comparisons" tabindex="0">
+      <div class="carousel-panel" data-comparison-group="1" role="group" aria-label="VLNVerse comparison group 1 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Walk forward through the doorway, out of the bathroom area and past the washing machine on your left and the double vanity on your right. Continue straight through the narrow passage lined with white cabinets on both your left and right sides. Turn right at the end of the passage, entering a long hallway with the cabinets now on your left. Walk straight down the hallway, passing a large framed picture on your right. Continue straight, passing an ornate mirror on your right, and then enter the open area, keeping the white cabinet with glass doors on your right. Turn left to enter the living room, passing a white console on your left, and stop in front of the TV console with the large window and two chairs directly ahead of you.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-model" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 1, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 1, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-internvla" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 1, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 1, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-uninavid" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 1, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 1, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="2" role="group" aria-label="VLNVerse comparison group 2 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Walk forward into the hallway, leaving the bedroom area on your left. Walk straight down the hallway. Turn left into the doorway to enter the closet. Walk straight through the closet, with the dark shelves and cabinets on your right. At the end of the closet, turn left to enter the bathroom. Walk straight into the bathroom, passing the toilet and vanity on your right, and stop inside the shower stall in front of the window.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-2-model" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 2, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 2, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-2-internvla" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 2, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 2, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-2-uninavid" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 2, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 2, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-panel" data-comparison-group="3" role="group" aria-label="VLNVerse comparison group 3 of 3">
+        <p class="comparison-prompt"><strong>Prompt:</strong> Enter the living room through the doorway, keeping the sofa on your left and the TV on your right. Turn right into the adjacent hallway. Walk straight down the hallway with patterned wallpaper, then turn right at the end to enter the bedroom. Walk past the bed on your left and stop in front of the window.</p>
+        <div class="comparison-group has-text-centered">
+          <div class="comparison-model">
+            <h3 class="title is-4" data-navigation-name>Nav4Manip-N</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-3-model" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 3, Nav4Manip-N">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 3, Nav4Manip-N" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">InternVLA-N1</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-3-internvla" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 3, InternVLA-N1">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 3, InternVLA-N1" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+          <div class="comparison-model">
+            <h3 class="title is-4">Uni-NaVid</h3>
+            <div class="item">
+            <div class="demo-media" data-media-slot="comparison-vlnverse-3-uninavid" style="--media-aspect: 640 / 480;" aria-label="VLNVerse comparison group 3, Uni-NaVid">
+              <img src="./static/images/placeholders/video-standard.svg" alt="VLNVerse comparison group 3, Uni-NaVid" width="640" height="480" draggable="false">
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        
+        Website template based on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project page</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
