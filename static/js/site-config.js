@@ -229,12 +229,6 @@ window.PROJECT_PAGE_CONFIG = {
       "width": 640,
       "height": 480
     },
-    "mobile-manipulation-6": {
-      "src": "./static/video/mobile-manipulation/House_seed91038_firstperson_4x.mp4",
-      "poster": "./static/images/mobile-manipulation/House_seed91038_firstperson.jpg",
-      "width": 640,
-      "height": 480
-    },
     "comparison-r2r-2-model": {
       "src": "./static/video/r2r/03_R2R_episode_1514/origin_mix_v6.mp4",
       "poster": "./static/images/r2r/03_R2R_episode_1514/origin_mix_v6.jpg",
