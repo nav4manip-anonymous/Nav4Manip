@@ -14,6 +14,21 @@
   max-width: none !important;
 }
 
+.realworld-gallery {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.realworld-example {
+  flex: var(--video-ratio, 1.777777778) 1 0;
+  min-width: 0;
+}
+
+.realworld-example p {
+  margin-top: 0.75rem;
+}
+
 .demo-carousel {
   margin-bottom: 1rem;
   /* Keep focus on the arrow from scrolling the clipped row sideways. */
