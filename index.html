@@ -76,9 +76,13 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<section class="hero teaser" id="overview">
   <div class="container is-max-desktop"><div class="hero-body">
-    <img src="./static/images/placeholders/teaser.svg" alt="Overview figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <div class="overview-player media-frame">
+      <video id="overview-video" controls playsinline preload="metadata" poster="./static/images/overview/875043031.jpg" width="854" height="480" aria-label="Nav4Manip overview">
+        <source src="./static/video/overview/875043031.mp4" type="video/mp4">
+      </video>
+    </div>
     <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">A bidirectionally coupled co-evolution system for long-horizon dexterous mobile manipulation.</h2>
   </div></div>
 </section>
@@ -90,43 +94,53 @@
   </div></div></div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+<section class="hero teaser paper-figure-section" id="method">
+  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-full">
     <br><h2 class="title is-3">Method</h2>
-    <img src="./static/images/placeholders/method.svg" alt="Method figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <a class="paper-figure-link" href="./static/images/figures/nav4manip_4.svg" target="_blank" rel="noopener" aria-label="Open the Nav4Manip method diagram at full size">
+      <img class="paper-figure" src="./static/images/figures/nav4manip_4.svg" alt="Nav4Manip architecture with navigation, affordance estimation, manipulation, and selective RLAIF feedback">
+    </a>
     <div class="content has-text-justified"><p>Our framework trains its navigation model in three stages: <b>multi-task co-tuning</b> learns navigation behavior and manipulation-aware affordance prediction; <b>rejection sampling fine-tuning (RFT)</b> rejects low-quality policy-generated paths and fine-tunes the model on retained manipulation-successful trajectories; and <b>reinforcement learning from AI feedback (RLAIF)</b> uses execution-grounded counterfactual preferences to further improve navigation decisions.</p></div><br>
   </div></div></div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
+<section class="hero teaser paper-figure-section" id="benchmark-and-data">
+  <div class="container is-max-desktop"><div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-full">
     <br><h2 class="title is-3">Nav-N-Manip and Nav4Manip-Pairs</h2>
-    <img src="./static/images/placeholders/data.svg" alt="Benchmark and dataset figure to be provided" style="width:100%; max-width:800px; display:block; margin-left:auto; margin-right:auto; border-radius: 10px;">
+    <a class="paper-figure-link" href="./static/images/figures/nav4manip_3_data_3.svg" target="_blank" rel="noopener" aria-label="Open the Nav-N-Manip and Nav4Manip-Pairs data generation diagram at full size">
+      <img class="paper-figure" src="./static/images/figures/nav4manip_3_data_3.svg" alt="Data generation pipeline from scene assets and manipulation affordances to navigation rendering, language annotation, and paired trajectory data">
+    </a>
     <div class="content has-text-justified"><p>We establish the Nav-N-Manip benchmark and construct Nav4Manip-Pairs from benchmark rollouts, providing large-scale paired navigation–manipulation trajectories and rollout-derived affordance supervision.</p></div><br>
   </div></div></div>
 </section>
 
-<section class="section" id="real-world-evaluation">
-  <div class="container is-max-desktop">
+<section class="section demo-section" id="real-world-evaluation">
+  <div class="container demo-container--wide">
     <div class="columns is-centered has-text-centered" style="margin-left:0; margin-right:0;"><div class="column is-four-fifths">
       <br><h2 class="title is-3">Real-World Evaluation</h2><p>Real-world evaluations show that <span data-method-name>Nav4Manip</span> completes diverse dexterous mobile-manipulation tasks.</p><br>
     </div></div>
     <div class="realworld-gallery has-text-centered">
       <div class="realworld-example" style="--video-ratio: 1.777777778;">
-        <div class="demo-media" data-media-slot="realworld-1" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 1">
-          <img src="./static/images/realworld/1064031782.jpg" alt="Real-world demonstration 1" width="1280" height="720">
+        <div class="media-frame">
+          <div class="demo-media" data-media-slot="realworld-1" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 1">
+            <img src="./static/images/realworld/1064031782.jpg" alt="Real-world demonstration 1" width="1280" height="720">
+          </div>
         </div>
         <p>Real-world demonstration</p>
       </div>
       <div class="realworld-example" style="--video-ratio: 1.777777778;">
-        <div class="demo-media" data-media-slot="realworld-2" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 2">
-          <img src="./static/images/realworld/1751186873.jpg" alt="Real-world demonstration 2" width="1280" height="720">
+        <div class="media-frame">
+          <div class="demo-media" data-media-slot="realworld-2" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 2">
+            <img src="./static/images/realworld/1751186873.jpg" alt="Real-world demonstration 2" width="1280" height="720">
+          </div>
         </div>
         <p>Real-world demonstration</p>
       </div>
       <div class="realworld-example" style="--video-ratio: 1.777777778;">
-        <div class="demo-media" data-media-slot="realworld-3" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 3">
-          <img src="./static/images/realworld/1937928961.jpg" alt="Real-world demonstration 3" width="1280" height="720">
+        <div class="media-frame">
+          <div class="demo-media" data-media-slot="realworld-3" style="--media-aspect: 1280 / 720;" aria-label="Real-world demonstration 3">
+            <img src="./static/images/realworld/1937928961.jpg" alt="Real-world demonstration 3" width="1280" height="720">
+          </div>
         </div>
         <p>Real-world demonstration</p>
       </div>

@@ -14,6 +14,43 @@
   max-width: none !important;
 }
 
+.media-frame {
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+
+.overview-player {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.overview-player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 854 / 480;
+  object-fit: contain;
+}
+
+.paper-figure-link {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.paper-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paper-figure-section .content {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .realworld-gallery {
   display: flex;
   align-items: flex-start;
